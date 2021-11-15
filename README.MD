@@ -5,6 +5,11 @@
 - create DB
   `docker-compose run web rake db:create`
 
+- to login to docker web's bash terminal:
+  - do `docker ps` to get list of all containers running
+  - to login to the container with the CONTAINER ID after identifying correctly the container you want to login to, do
+    - `docker exec -it <CONTAINER-ID> /bin/bash`
+
 ## Notes
 
 - in rails, convention is preferred over configuration
@@ -38,6 +43,10 @@
 
 - `rails generate model post title:string body:text`
 
+### Styling
+
+- application-wide styling goes in the file - `app/assets/stylesheets/application.css`
+
 ## Initial Setup
 
 - Generate ruby app within `web` docker container
@@ -67,3 +76,4 @@ pool: 5
 ## Reference
 
 - https://docs.docker.com/samples/rails/
+- https://www.udemy.com/course/8-beautiful-ruby-on-rails-apps-in-30-days/

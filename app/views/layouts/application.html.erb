@@ -10,6 +10,25 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <div>
+      <ul>
+        <li><%= link_to 'MyTumblrApp', root_path %></li>
+        <li>About</li>
+        <li>User Login</li>
+        <li>Logout</li>
+        <li><%= link_to 'New Post', new_post_path %></li>
+      </ul>
+    </div>
+
+    <div>
+      <%= flash.each do |name, message| %>
+        <%= content_tag :div, message %>
+      <% end %>
+
+      <%= yield %>
+    </div>
+
   </body>
+
 </html>
