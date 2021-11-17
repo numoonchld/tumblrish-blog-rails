@@ -60,6 +60,29 @@
 
 - `rails generate controller Comments`
 
+### Static Pages
+
+- `rails generate controller pages`
+
+## Authentication with devise
+
+- add `gem 'devise'` to `Gemfile`
+- run `bundle install`
+- then run `rails generate devise:install`
+
+  - then follow the required instructions showed in the response in the CLI
+  - on required step is to add the _host_ and _port_ for various environments
+
+- run `rails g devise:views` if devise views need to be customized
+
+### User
+
+#### User - Model Generation
+
+- devise is to be leveraged to manage users in the app
+  - run `rails generate devise User` to generate user model component files
+  - then run migrations (`rails db:migrate`)
+
 ## Initial Setup
 
 - Generate ruby app within `web` docker container
