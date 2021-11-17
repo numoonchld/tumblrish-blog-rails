@@ -5,7 +5,10 @@
 - create DB
   `docker-compose run web rake db:create`
 
+- in browser, go to `localhost:5051`
+
 - to login to docker web's bash terminal:
+
   - do `docker ps` to get list of all containers running
   - to login to the container with the CONTAINER ID after identifying correctly the container you want to login to, do
     - `docker exec -it <CONTAINER-ID> /bin/bash`
@@ -35,17 +38,27 @@
 
 ### Posts
 
-#### Posts - Controller
+#### Posts - Controller Generation
 
 - `rails generate controller posts`
 
-#### Posts - Model
+#### Posts - Model Generation
 
 - `rails generate model post title:string body:text`
 
 ### Styling
 
 - application-wide styling goes in the file - `app/assets/stylesheets/application.css`
+
+### Comments on a Blog Post
+
+#### Comments - Model Generation
+
+- `rails generate model Comment name:string body:text post:references`
+
+#### Comments - Controller Generation
+
+- `rails generate controller Comments`
 
 ## Initial Setup
 

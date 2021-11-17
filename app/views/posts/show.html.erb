@@ -1,16 +1,27 @@
-<h1> 
-  <%= @post.title %>
-</h1>
+<div>
 
-<p>
-  Created <%= time_ago_in_words(@post.created_at) %> ago
-</p>
-<p>
-  <%= link_to 'Edit', edit_post_path %> |
-  <%= link_to 'Delete', post_path, method: :delete, data: { confirm: 'Are you sure?'} %> 
+  <h1> 
+    <%= @post.title %>
+  </h1>
 
-</p>
+  <p>
+    Created <%= time_ago_in_words(@post.created_at) %> ago
+  </p>
+  <p>
+    <%= link_to 'Edit', edit_post_path %> |
+    <%= link_to 'Delete', post_path, method: :delete, data: { confirm: 'Are you sure?'} %> 
 
-<p> 
-  <%= @post.body %>
-</p>
+  </p>
+
+  <p> 
+    <%= @post.body %>
+  </p>
+
+  <div>
+    <h3><%= @post.comments.count %> comments</h3>
+    <%= render @post.comments%>
+    <h4> Leave a comment! </h4>
+    <%= render "comments/form" %>
+  </div>
+
+</div>
